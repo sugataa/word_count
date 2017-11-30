@@ -5,8 +5,8 @@ You will need pip, git and python3 installed.
 1. Clone the repo:
 
   ```sh
-  $ mkdir flaskr-tdd
-  $ cd flaskr-tdd
+  $ git clone https://github.com/sugataa/word_count.git
+  $ cd word_count
   ```
 
 2. Create and activate your virtual env:
