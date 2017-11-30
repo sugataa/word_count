@@ -32,10 +32,26 @@ def word_count():
     return render_template('index.html', form=form)
 
 def generate_word_count(text_block):
+    '''
+    :type text_block: String
+    :rtype: String
+
+    Splits text block by whitesace and returns the count of tokens.
+
+    Returns the sum of the Counter values to get the number of words.
+    '''
     word_counter = collections.Counter(text_block.split())
     return str(sum(word_counter.values()))
 
 def generate_unique_word_count(text_block):
+    '''
+    :type text_block: String
+    :rtype: String
+
+    Removes all punctuation in string, lowers individual string, inserts uniquely into Counter.
+
+    Returns the length of the Counter to get the number of unique words.
+    '''
     punctuation_replaced = text_block.translate(str.maketrans({a:None for a in punctuation})).lower()
     word_counter = collections.Counter(punctuation_replaced.split())
     return str(len((word_counter.keys())))
